@@ -1,0 +1,26 @@
+﻿@model List<Item>
+
+<div class="container-fluid mt-100">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Pedidos realizados</h5>
+                </div>
+                <div>
+                    <table class="table table-hover">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.IdPedido</td>
+                                <td>@item.Produto.Nome</td>
+                                <td>@item.Quantidade</td>
+                                <td>@item.ValorTotal</td>
+                            </tr>
+                          }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

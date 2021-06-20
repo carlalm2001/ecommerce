@@ -1,0 +1,46 @@
+﻿@{ Layout = null; }
+
+@model Cliente
+
+
+<head>
+    <meta charset="utf-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<!-- no additional media querie or css is required -->
+<body>
+    <section class="h-100">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="height:100vh">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Novo usuário</h3>
+                            <form asp-controller="Cliente" asp-action="Create" method="post">
+                                <div class="form-group">
+                                    <input asp-for="Nome" class="form-control" placeholder="Nome *">
+                                    <span asp-validation-for="Nome"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Email" class="form-control" placeholder="Email *">
+                                    <span asp-validation-for="Email"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Senha" class="form-control" placeholder="Senha *">
+                                    <span asp-validation-for="Senha"></span>
+                                </div>
+                                <div class="form-group m-0">
+                                    <button class="btn btn-primary">Cadastrar</button>
+                                    <button class="btn btn-primary" asp-controller="Cliente" asp-action="Login">Possuo cadastro</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

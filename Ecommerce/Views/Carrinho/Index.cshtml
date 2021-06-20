@@ -1,0 +1,41 @@
+﻿@model List<Item>
+
+
+
+
+<center>
+    <div class="container-fluid mt-100" style="padding-top:100px">
+
+        <h5>Carrinho</h5>
+        <div>
+            <table class="table table-hover">
+
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>@item.Produto.IdProduto</td>
+        <td>@item.Produto.Nome</td>
+        <td>@item.Produto.Descricao</td>
+        <td>@item.Produto.Valor</td>
+        <td>@item.Quantidade</td>
+        <td>@item.ValorTotal</td>
+        <td>
+            <a class="btn btn-sm btn-danger" href="/carrinho/remover/@item.Produto.IdProduto">
+                Remover
+            </a>
+        </td>
+    </tr>}
+            </table>
+        </div>
+
+        <a href="/carrinho/finalizar" class="btn btn-primary cart-btn-transform mt-2 float-right"
+           data-abc="true" onclick="finalizado()">Finalizar Compra</a>
+
+    </div>
+</center>
+
+<script>
+    function finalizado() {
+        alert("Sua compra foi finalizada com sucesso!");
+    }
+</script>

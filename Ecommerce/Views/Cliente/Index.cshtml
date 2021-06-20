@@ -1,0 +1,21 @@
+﻿@model List<Cliente>
+
+@{ ViewData["Title"] = "Cliente"; }
+
+<br />
+
+    <table class="table table-hover">
+        @foreach (var cli in Model)
+        {
+            <tr>
+                <td>@cli.IdCliente</td>
+                <td>@cli.Nome</td>
+                <td>@cli.Email</td>
+                <td>
+                    <a class="btn btn-sm btn-danger" href="/cliente/delete/@cli.IdCliente">Apagar</a>
+                    <a class="btn btn-sm btn-warning" href="/cliente/update/@cli.IdCliente">Editar</a>
+                </td>
+            </tr>
+        }
+    </table>
+<a class="btn btn-primary" href="/cliente/create">Cadastrar</a>
